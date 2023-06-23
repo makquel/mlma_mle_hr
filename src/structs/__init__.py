@@ -1,4 +1,3 @@
-from collections import deque
 from components import Item
 
 
@@ -14,22 +13,19 @@ class Buffer(object):
         if policy not in ["FIFO", "LIFO"]:
             raise ValueError()
         self._policy = policy
-        self._queue = deque()
+
 
     def insert(self, item: Item) -> None:
         # TODO: Put your code here
         # ...
-        self._queue.append(item)
+        raise NotImplementedError
 
     def extract(self) -> Item:
         # TODO: Put your code here
         # ...
-        if self._policy == "FIFO":
-            return self._queue.pop()
-        else:
-            return self._queue.popleft()
+        raise NotImplementedError
 
     def flush(self) -> None:
         # TODO: Put your code here
         # ...
-        self._queue.clear()
+        raise NotImplementedError
